@@ -14,7 +14,7 @@
  <parameter name="Pass" value="admin123"></parameter>
     <classes>
    
-      <class name="Test_Package.TestText"></class>
+      <class name="Test_Package.Login_Test"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

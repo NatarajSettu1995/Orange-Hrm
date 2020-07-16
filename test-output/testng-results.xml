@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2547" started-at="2020-07-02T18:23:54Z" finished-at="2020-07-02T18:23:57Z">
+  <suite name="Default suite" duration-ms="1107" started-at="2020-07-15T18:44:29Z" finished-at="2020-07-15T18:44:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2547" started-at="2020-07-02T18:23:54Z" finished-at="2020-07-02T18:23:57Z">
-      <class name="Test_Package.DropDownTest">
-        <test-method status="PASS" signature="Link()[pri:0, instance:Test_Package.DropDownTest@19835e64]" name="Link" duration-ms="2434" started-at="2020-07-02T23:53:54Z" finished-at="2020-07-02T23:53:57Z">
+    <test name="Default test" duration-ms="1107" started-at="2020-07-15T18:44:29Z" finished-at="2020-07-15T18:44:30Z">
+      <class name="Test_Package.iframeTest">
+        <test-method status="PASS" signature="DragAndDrop()[pri:0, instance:Test_Package.iframeTest@19835e64]" name="DragAndDrop" duration-ms="1017" started-at="2020-07-16T00:14:29Z" finished-at="2020-07-16T00:14:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Link -->
-      </class> <!-- Test_Package.DropDownTest -->
+        </test-method> <!-- DragAndDrop -->
+      </class> <!-- Test_Package.iframeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

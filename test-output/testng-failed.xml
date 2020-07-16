@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Test_Package.DropDownTest">
+      <class name="Test_Package.iframeTest">
         <methods>
-          <include name="DropDown"/>
+          <include name="DragAndDrop"/>
         </methods>
-      </class> <!-- Test_Package.DropDownTest -->
+      </class> <!-- Test_Package.iframeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

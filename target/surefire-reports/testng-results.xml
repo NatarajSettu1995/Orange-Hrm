@@ -2,12 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="4555" started-at="2020-07-01T11:38:25Z" finished-at="2020-07-01T11:38:30Z">
+  <suite name="Suite" duration-ms="855" started-at="2020-07-16T12:08:15Z" finished-at="2020-07-16T12:08:16Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="4555" started-at="2020-07-01T11:38:25Z" finished-at="2020-07-01T11:38:30Z">
+    <test name="Test" duration-ms="855" started-at="2020-07-16T12:08:15Z" finished-at="2020-07-16T12:08:16Z">
       <class name="Test_Package.Login_Test">
-        <test-method status="PASS" signature="Login()[pri:0, instance:Test_Package.Login_Test@600b90df]" name="Login" duration-ms="4461" started-at="2020-07-01T17:08:25Z" finished-at="2020-07-01T17:08:30Z">
+        <test-method status="PASS" signature="Login(java.lang.String, java.lang.String)[pri:0, instance:Test_Package.Login_Test@d41f816]" name="Login" duration-ms="805" started-at="2020-07-16T17:38:15Z" finished-at="2020-07-16T17:38:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->

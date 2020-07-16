@@ -8,7 +8,9 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
@@ -26,6 +28,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
+
+
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
@@ -38,19 +42,117 @@ public class BasePage {
 					+ "\\chromedriver\\win32\\83.0.4103.39\\chromedriver.exe");
 		//WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
-			driver.get("http://leafground.com/home.html");
+			driver.get("https://opensource-demo.orangehrmlive.com/");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
 			
 		}
 		
 }
+	
+	public void dragANDdrop(WebElement Drag,WebElement Drop)
+	{
+		Actions act=new Actions(driver);
+		//act.dragAndDrop(Drag, Drop).build().perform();;
+		//act.clickAndHold(Drag).moveToElement(Drop).build().perform();
+		act.clickAndHold(Drag).release(Drop).build().perform();
+		//act.clickAndHold(Drag).moveByOffset(299, 62).build().perform();
+		//act.dragAndDropBy(Drag, 299, 62).build().perform();
+		
+	}
+	
+	public void Sortable(List<WebElement> Location,int index1,int index2)
+	{
+		Actions act=new Actions(driver);
+		//act.dragAndDrop(Location.get(index1), Location.get(index2)).build().perform();
+		act.clickAndHold(Location.get(index1)).moveToElement(Location.get(index2)).build().perform();
+		//act.clickAndHold(Location.get(index1)).release(Location.get(index2)).build().perform();
+		
+		
+	}
+	
+	
+	public void WindowsCount()
+	{
+		Set<String>AllWindows=driver.getWindowHandles();
+		
+		System.out.println("TOtall No of Windows="+AllWindows.size());
+	}
+	
+	public void WindowSwitch(int Wno)
+	{
+		Set<String>AllWindows=driver.getWindowHandles();
+		List<String>Windows=new ArrayList<String>();
+		Windows.addAll(AllWindows);
+		int Cout=0;
+		for(String Ret:Windows)
+		{
+			Cout++;
+			driver.switchTo().window(Ret);
+			System.out.println("Title="+driver.getTitle());
+			if(Cout==Wno)
+			{
+			break;
+			
+			}
+		}
+		
+	}
+	
+	public void WindowSwitchM2(int index)
+	{
+		Set<String>AllWindows=driver.getWindowHandles();
+		List<String>Windows=new ArrayList<String>();
+		Windows.addAll(AllWindows);
+		driver.switchTo().window(Windows.get(index));
+		System.out.println("Window Title="+driver.getTitle());
+		
+	}
+	
+	
+	
+	public void iframe(int frameNo)
+	{
+		
+		
+	}
+	public void iframeNested(String frameid)
+	{
+		driver.switchTo().frame(frameid);
+	}
+	
+	public void iframeSingleM(int Normal,String Nested)
+	{
+		if(Nested==null)
+		{
+			driver.switchTo().frame(Normal);	
+		}
+		else
+		{
+			driver.switchTo().frame(Normal);	
+			driver.switchTo().frame(Nested);	
+			
+		}
+		}
+		
+	public void ParentFrame()
+	{
+		driver.switchTo().defaultContent();
+	}
+		
+	
+	
+	
+	
+	
 	//*Not Use//But Selectable can use
-	public void SelectValueMultiSelectDropDownWithoutSelect1(List<WebElement> Location,int index)
+	public void SelectValueMultiSelectDropDownWithoutSelect1(List<WebElement> Location,int index,int index1)
 	{
 	
 		Actions action=new Actions(driver);
-		action.clickAndHold(Location.get(index)).build().perform();
+		action.clickAndHold(Location.get(index)).moveToElement(Location.get(index1)).build().perform();;
+	
 		System.out.println(Location.get(index).getText());
 	}
 	public void SelectValuemultiDropDownWithoutSelect(List<WebElement> Location,int index,int index1)
@@ -76,6 +178,7 @@ public class BasePage {
 	public void SelectDropDownUsingSelect(WebElement Location,int index,String ValText)
 	{
 		Select select=new Select(Location);
+
 		if(ValText==null)
 		{
 			select.selectByIndex(index);
@@ -118,6 +221,7 @@ public class BasePage {
 		if(Location.isEnabled())
 		{
 			Location.sendKeys(Name);
+			
 			System.out.println(Location.getAttribute("value"));
 		}
 		else
@@ -269,6 +373,11 @@ public class BasePage {
 		
 		
 	}
+	
+	
+	
+	
+	
 }
 
 

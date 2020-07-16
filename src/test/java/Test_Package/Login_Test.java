@@ -23,18 +23,18 @@ b=new BasePage();
 }
 
 	@Test
-	//@Parameters({"User","Pass"})
-	public void Login() throws IOException, AWTException
+	@Parameters({"User","Pass"})
+	public void Login(String User,String Pass) throws IOException, AWTException
 	{
 		
-		b.TextWithouSendKey(l.txtUsername, "Admin");
-		b.TextWithouSendKey(l.txtPassword, "admin123");
-		//l.btnLogin.click();
-		b.NormalScrennShot("Normal");
+		b.TextWithouSendKey(l.txtUsername, User);
+		b.TextWithouSendKey(l.txtPassword, Pass);
+	    l.btnLogin.click();
+		/*b.NormalScrennShot("Normal");
 		b.ParticularScrennShotWithoutInterFace("user", l.txtUsername);
 		b.ParticularScrennShotWithoutInterFace("Pass", l.txtPassword);
 		b.ParticularScrennShotWithoutInterFace("Login",l.btnLogin );
-		b.fullScreenShot("FullScreen");
+		b.fullScreenShot("FullScreen");*/
 	}
 
 	

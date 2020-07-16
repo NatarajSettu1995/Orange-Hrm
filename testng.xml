@@ -4,17 +4,9 @@
 <listeners>
 <listener class-name="Test_Package.Login_Test"></listener>
 </listeners>
-
-
-
-
   <test name="Test">
-  
- <parameter name="User" value="Admin"></parameter>
- <parameter name="Pass" value="admin123"></parameter>
-    <classes>
-   
-      <class name="Test_Package.Login_Test"></class>
+      <classes>
+   <class name="Test_Package.Login_Test"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
